@@ -22,5 +22,10 @@ version = 1
     sequence = [
         "base.sql",
         "add_utility_schema.sql",
-        "add_city_definition.sql"
+        "add_city_definition.sql",
+        "add_participant_definition.sql",
+        "add_team_definition.sql",
+        "add_team_participant_relation.sql",
+        "add_leader_definition.sql",
+        "add_team_leader_relation.sql"
     ]
