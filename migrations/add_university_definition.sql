@@ -24,13 +24,16 @@ $delim$ LANGUAGE plpgsql;
 */
 CREATE TABLE local.university (
     id VARCHAR(64) NOT NULL,
+    city_id VARCHAR(64) NOT NULL,
     name VARCHAR(255) NOT NULL,
     external_link VARCHAR(255) DEFAULT 'N/A' NOT NULL,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     updated TIMESTAMP WITH TIME ZONE NOT NULL,
     period tstzrange NOT NULL,
     CONSTRAINT university_pk PRIMARY KEY (id),
-    CONSTRAINT university_unique UNIQUE (name)
+    CONSTRAINT university_unique UNIQUE (name),
+    CONSTRAINT university_to_city_fk FOREIGN KEY (city_id)
+        REFERENCES local.city (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 /*
