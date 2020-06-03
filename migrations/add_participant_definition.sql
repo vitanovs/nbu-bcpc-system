@@ -23,6 +23,7 @@ $delim$ LANGUAGE plpgsql;
 */
 CREATE TABLE local.participant (
     id VARCHAR(64) NOT NULL,
+    team_id VARCHAR(64),
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -30,7 +31,9 @@ CREATE TABLE local.participant (
     updated TIMESTAMP WITH TIME ZONE NOT NULL,
     period tstzrange NOT NULL,
     CONSTRAINT participant_pk PRIMARY KEY (id),
-    CONSTRAINT participant_unique UNIQUE (email)
+    CONSTRAINT participant_unique UNIQUE (email),
+    CONSTRAINT participant_to_team_fk FOREIGN KEY (team_id)
+        REFERENCES local.team (id) ON UPDATE CASCADE
 );
 
 /*
