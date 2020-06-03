@@ -27,5 +27,7 @@ version = 1
         "add_team_definition.sql",
         "add_team_participant_relation.sql",
         "add_leader_definition.sql",
-        "add_team_leader_relation.sql"
+        "add_team_leader_relation.sql",
+        "add_university_definition.sql",
+        "add_olympiad_definition.sql"
     ]
