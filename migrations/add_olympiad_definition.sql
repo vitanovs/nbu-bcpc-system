@@ -24,15 +24,21 @@ $delim$ LANGUAGE plpgsql;
 */
 CREATE TABLE local.olympiad (
     id VARCHAR(64) NOT NULL,
+    university_id VARCHAR(64) NOT NULL,
+    city_id VARCHAR(64) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    year SMALLINT NOT NULL CHECK (year > 0),
-    city_id VARCHAR(255) NOT NULL REFERENCES local.city(id),
-    host_university_id VARCHAR(255) NOT NULL REFERENCES local.university(id),
+    year SMALLINT NOT NULL,
     external_link VARCHAR(255) NOT NULL DEFAULT 'N/A',
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     updated TIMESTAMP WITH TIME ZONE NOT NULL,
     period tstzrange NOT NULL,
-    CONSTRAINT olympiad_pk PRIMARY KEY (id)
+    CONSTRAINT olympiad_pk PRIMARY KEY (id),
+    CONSTRAINT olympiad_unique UNIQUE (name, year),
+    CONSTRAINT olympiad_year_should_be_positive CHECK (year > 0),
+    CONSTRAINT olympiad_to_university_fk FOREIGN KEY (university_id)
+        REFERENCES local.university (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT olympiad_to_city_fk FOREIGN KEY (city_id)
+        REFERENCES local.city (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 /*
