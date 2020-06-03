@@ -8,7 +8,7 @@ CREATE OR REPLACE FUNCTION local.team_create_primary_key() RETURNS trigger AS $d
         pk VARCHAR(64);
         pk_seed VARCHAR;
     BEGIN
-        pk_seed = CONCAT(NEW.name);
+        pk_seed = CONCAT(NEW.university_id, NEW.name);
         pk =LOWER(ENCODE(public.DIGEST(pk_seed, 'sha256'), 'hex'));
         IF NEW.id IS DISTINCT FROM pk THEN
           NEW.id := pk;
@@ -23,12 +23,14 @@ $delim$ LANGUAGE plpgsql;
 */
 CREATE TABLE local.team (
     id VARCHAR(64) NOT NULL,
+    university_id VARCHAR(64) NOT NULL,
     name VARCHAR(255) NOT NULL,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     updated TIMESTAMP WITH TIME ZONE NOT NULL,
     period tstzrange NOT NULL,
     CONSTRAINT team_pk PRIMARY KEY (id),
-    CONSTRAINT team_unique UNIQUE (name)
+    CONSTRAINT team_to_university_fk FOREIGN KEY (university_id)
+        REFERENCES local.university (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 /*
