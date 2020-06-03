@@ -9,7 +9,7 @@ CREATE OR REPLACE FUNCTION local.university_create_primary_key() RETURNS trigger
         pk_seed VARCHAR;
     BEGIN
         pk_seed = CONCAT(NEW.name);
-        pk =LOWER(ENCODE(local.DIGEST(pk_seed, 'sha256'), 'hex'));
+        pk =LOWER(ENCODE(public.DIGEST(pk_seed, 'sha256'), 'hex'));
 
         IF NEW.id IS DISTINCT FROM pk THEN
           NEW.id := pk;
@@ -45,7 +45,7 @@ CREATE TABLE history.university (LIKE local.university);
 CREATE TRIGGER university_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.university
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.university', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.university', true);
 
 /*
     Trigger to create primary key value before insert.

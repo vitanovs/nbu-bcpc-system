@@ -47,7 +47,7 @@ CREATE TABLE history.team_participant (LIKE local.team_participant);
 CREATE TRIGGER team_participant_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.team_participant
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.team_participant', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.team_participant', true);
 
 /*
     Trigger to create primary key value before insert.

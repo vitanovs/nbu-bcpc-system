@@ -44,7 +44,7 @@ CREATE TABLE history.leader (LIKE local.leader);
 CREATE TRIGGER leader_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.leader
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.leader', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.leader', true);
 
 /*
     Trigger to create primary key value before insert.

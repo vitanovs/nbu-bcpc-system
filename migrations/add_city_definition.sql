@@ -43,7 +43,7 @@ CREATE TABLE history.city (LIKE local.city);
 CREATE TRIGGER city_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.city
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.city', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.city', true);
 
 /*
     Trigger to create primary key value before insert.

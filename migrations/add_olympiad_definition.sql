@@ -9,7 +9,7 @@ CREATE OR REPLACE FUNCTION local.olympiad_create_primary_key() RETURNS trigger A
         pk_seed VARCHAR;
     BEGIN
         pk_seed = CONCAT(NEW.name);
-        pk =LOWER(ENCODE(local.DIGEST(pk_seed, 'sha256'), 'hex'));
+        pk =LOWER(ENCODE(public.DIGEST(pk_seed, 'sha256'), 'hex'));
 
         IF NEW.id IS DISTINCT FROM pk THEN
           NEW.id := pk;
@@ -52,7 +52,7 @@ CREATE TABLE history.olympiad (LIKE local.olympiad);
 CREATE TRIGGER olympiad_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.olympiad
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.olympiad', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.olympiad', true);
 
 /*
     Trigger to create primary key value before insert.

@@ -42,7 +42,7 @@ CREATE TABLE history.team (LIKE local.team);
 CREATE TRIGGER team_history_tr
     BEFORE INSERT OR UPDATE OR DELETE on local.team
     FOR EACH ROW
-    EXECUTE PROCEDURE local.versioning('period', 'history.team', true);
+    EXECUTE PROCEDURE public.versioning('period', 'history.team', true);
 
 /*
     Trigger to create primary key value before insert.
