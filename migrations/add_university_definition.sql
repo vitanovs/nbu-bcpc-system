@@ -26,13 +26,11 @@ CREATE TABLE local.university (
     id VARCHAR(64) NOT NULL,
     name VARCHAR(255) NOT NULL,
     external_link VARCHAR(255) DEFAULT 'N/A' NOT NULL,
-    gold SMALLINT NOT NULL DEFAULT 0,
-    silver SMALLINT NOT NULL DEFAULT 0,
-    bronze SMALLINT NOT NULL DEFAULT 0,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     updated TIMESTAMP WITH TIME ZONE NOT NULL,
     period tstzrange NOT NULL,
-    CONSTRAINT university_pk PRIMARY KEY (id)
+    CONSTRAINT university_pk PRIMARY KEY (id),
+    CONSTRAINT university_unique UNIQUE (name)
 );
 
 /*
