@@ -1,0 +1,17 @@
+insert into local.university (city_id, name, external_link) values ('8744f916023bfbe7cba489f5117a14d79d42aaa27143920988bd119ed614126d', 'Американски университет в България', 'https://www.aubg.edu/');
+insert into local.university (city_id, name, external_link) values ('7229cfdc564c4248f8bf537fa5974dc0eac2cd4047152a9b7a6761e00808d71a', 'Бургаски свободен университет', 'https://www.bfu.bg/bg');
+insert into local.university (city_id, name, external_link) values ('242aa2ba9d14c4915b458ec6bd649974fe02fb4af41e5e39841709093bf65859', 'Варненски свободен университет „Черноризец Храбър“', 'https://www.vfu.bg/');
+insert into local.university (city_id, name, external_link) values ('a291f1721b7e349f27f6b5284309871d908a1a780f394611bf1883a89b7afd42', 'Великотърновски университет "Св.св. Кирил и Методий"', 'http://www.uni-vt.bg/bul/');
+insert into local.university (city_id, name, external_link) values ('242aa2ba9d14c4915b458ec6bd649974fe02fb4af41e5e39841709093bf65859', 'Икономически университет - Варна', 'https://www.ue-varna.bg/');
+insert into local.university (city_id, name, external_link) values ('1d0b658ca9be9bb970fde26c7515575c6227266bf6812da526586ec785ec0b89', 'Нов български университет', 'https://nbu.bg/');
+insert into local.university (city_id, name, external_link) values ('9b81fb557335b6108fbf34f444cd1feb3f83e3c000ef10dbdc3f9a0180d97e02', 'Пловдивски университет "Паисий Хилендарски"', 'https://uni-plovdiv.bg/');
+insert into local.university (city_id, name, external_link) values ('84ba9643d791f4747511f1e1fda0887039379a85449dc5fa93f5a7ad10510fa0', 'Русенски университет "Ангел Кънчев"', 'https://www.uni-ruse.bg/');
+insert into local.university (city_id, name, external_link) values ('1d0b658ca9be9bb970fde26c7515575c6227266bf6812da526586ec785ec0b89', 'Софийски университет "Св. Климент Охридски"', 'https://www.uni-sofia.bg/');
+insert into local.university (city_id, name, external_link) values ('242aa2ba9d14c4915b458ec6bd649974fe02fb4af41e5e39841709093bf65859', 'Технически университет - Варна', 'http://www2.tu-varna.bg/tu-varna/');
+insert into local.university (city_id, name, external_link) values ('423fff655fe998a0b9db630d0130289d1b30eff4532b746bf1ecb673c3f2c93a', 'Технически университет - Габрово', 'https://www.tugab.bg/');
+insert into local.university (city_id, name, external_link) values ('1d0b658ca9be9bb970fde26c7515575c6227266bf6812da526586ec785ec0b89', 'Технически университет - София', 'hhttps://tu-sofia.bg/');
+insert into local.university (city_id, name, external_link) values ('1d0b658ca9be9bb970fde26c7515575c6227266bf6812da526586ec785ec0b89', 'Университет по библиотекознание и информационни технологии', 'https://www.unibit.bg/');
+insert into local.university (city_id, name, external_link) values ('1d0b658ca9be9bb970fde26c7515575c6227266bf6812da526586ec785ec0b89', 'Университет за национално и световно стопанство', 'https://www.unwe.bg/');
+insert into local.university (city_id, name) values ('7229cfdc564c4248f8bf537fa5974dc0eac2cd4047152a9b7a6761e00808d71a', 'Университет "Проф. д-р Асен Златаров" - Бургас');
+insert into local.university (city_id, name, external_link) values ('8ef87e6f89cf3c161025f368a81326e89a3431a0c4f4b2f0fcda08ee27ce6121', 'Шуменски университет "Еп. Константин Преславски"', 'http://shu.bg/');
+insert into local.university (city_id, name, external_link) values ('8744f916023bfbe7cba489f5117a14d79d42aaa27143920988bd119ed614126d', 'Югозападен университет "Неофит Рилски"', 'http://www.swu.bg/');
