@@ -31,5 +31,11 @@ version = 1
         "add_olympiad_definition.sql",
         "add_participation_definition.sql",
         "add_task_definition.sql",
-        "add_submission_definition.sql"
+        "add_submission_definition.sql",
+        "Insert_cities.sql",
+        "Insert_Universities.sql",
+        "insert_Olympiads.sql",
+        "Insert_Leaders.sql",
+        "Insert_Tasks.sql",
+        "insert_2020_olympiad_stats.sql"
     ]
