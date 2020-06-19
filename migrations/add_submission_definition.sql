@@ -34,7 +34,7 @@ CREATE TABLE local.submission (
     CONSTRAINT submission_pk PRIMARY KEY (id),
     CONSTRAINT submission_unique UNIQUE (participation_id, task_id),
     CONSTRAINT sumission_trials_count_must_be_a_natural_number CHECK ( trials_count > 0 ),
-    CONSTRAINT sumission_minutes_since_start_must_be_a_positive_number CHECK ( minutes_since_start > 0 ),
+    CONSTRAINT sumission_minutes_since_start_must_be_a_positive_number CHECK ( minutes_since_start >= 0 ),
     CONSTRAINT submission_to_participation_fk FOREIGN KEY (participation_id)
         REFERENCES local.participation (id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT submission_to_task_fk FOREIGN KEY (task_id)
