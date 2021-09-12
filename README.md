@@ -1,6 +1,6 @@
 # NBU BCPC Statistics System
 
-[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/vitanovs/nbu-bcpc-system/issues)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest) [![GitHub issues](https://img.shields.io/github/issues/vitanovs/nbu-bcpc-system)](https://github.com/vitanovs/nbu-bcpc-system/issues)
 
 This repository contains the source code of the BCPC Statistics system of New Bulgarian University.
 
